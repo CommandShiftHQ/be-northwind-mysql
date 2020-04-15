@@ -1,5 +1,7 @@
 # Northwind MySQL Challenge
 
+A pre-populated MySQL database and practice exercises.
+
 ## Getting Started
 
 This exercise requires you to install docker on you macine. Docker allows us to run applications inside containers. You can read more about containers [here](https://www.docker.com/resources/what-container).
@@ -85,7 +87,6 @@ You should see the following:
 | Database           |
 +--------------------+
 | information_schema |
-| company            |
 | mysql              |
 | northwind          |
 | performance_schema |
