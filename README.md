@@ -111,4 +111,4 @@ SELECT * FROM employees;
 
 Click the lightning bolt and confirm that the query returns employee information. 
 
-No on to the exercises!
+Now on to the exercises!
