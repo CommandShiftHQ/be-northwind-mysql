@@ -8,7 +8,7 @@ This exercise requires you to install docker on you macine. Docker allows us to 
 
 ### Installing Docker
 
-#### Ubunut
+#### Ubuntu
 
 Update your software database:
 ```
