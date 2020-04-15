@@ -96,3 +96,19 @@ You should see the following:
 ```
 
 That's everything we need to do inside the container. Type in `exit` to close `MySQL` and then again to exit the container. It will continue to run in the background.
+
+## Working on the database
+
+Open up MySQL-Workbench and connect it to `local instance 3303`. You will need to enter the root user password `supersecret`.
+
+In the bottom right of the screen you will see the `northwind` database. Right click on it and set it as your default schema.
+
+Check that you are able to send queries to the database by entering some thing like:
+
+```
+SELECT * FROM employees;
+```
+
+Click the lightning bolt and confirm that the query returns employee information. 
+
+No on to the exercises!
