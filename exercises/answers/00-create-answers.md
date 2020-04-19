@@ -83,41 +83,47 @@ You may need to restart `mysql-workbench`.
     country_id INTEGER NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
     country_name VARCHAR(40) CHECK (country_name IN ('Italy' , 'India', 'China')),
     region_id DECIMAL(10 , 0 )
-);
+    );
     ```
 
 1. Write a statement to create a table named `jobs`. It should have the columns `job_id`, `job_title`, `min_salery`, `max_salery`. You should make sure that salery cannot exceed 25000.
 
+    ```
+    CREATE TABLE jobs ( 
+    JOB_ID varchar(10) NOT NULL , 
+    JOB_TITLE varchar(35) NOT NULL, 
+    MIN_SALARY decimal(6,0), 
+    MAX_SALARY decimal(6,0) 
+    CHECK(MAX_SALARY<=25000)
+    );
+    ```
+
 1. Write a SQL statement to create a table named job_histry including columns employee_id, start_date, end_date, job_id and department_id and make sure that the value against column end_date will be entered at the time of insertion to the format like '--/--/----'.
 
-1. Write a SQL statement to create a table job_history including columns employee_id, start_date, end_date, job_id and department_id and make sure that, the employee_id column does not contain any duplicate value at the time of insertion and the foreign key column job_id contain only those values which are exists in the jobs table.
-
-Here is the structure of the table jobs;
-
-```
-+------------+--------------+------+-----+---------+-------+
-| Field      | Type         | Null | Key | Default | Extra |
-+------------+--------------+------+-----+---------+-------+
-| JOB_ID     | varchar(10)  | NO   | PRI |         |       |
-| JOB_TITLE  | varchar(35)  | NO   |     | NULL    |       |
-| MIN_SALARY | decimal(6,0) | YES  |     | NULL    |       |
-| MAX_SALARY | decimal(6,0) | YES  |     | NULL    |       |
-+------------+--------------+------+-----+---------+-------+
-```
+    ```
+    CREATE TABLE IF NOT EXISTS job_history ( 
+    EMPLOYEE_ID decimal(6,0) NOT NULL, 
+    START_DATE date NOT NULL, 
+    END_DATE date NOT NULL
+    CHECK (END_DATE LIKE '--/--/----'), 
+    JOB_ID varchar(10) NOT NULL, 
+    DEPARTMENT_ID decimal(4,0) NOT NULL 
+    );
+    ```
 
 # Insert Exercises
 
 Create the following table in your database:
 
-```
-+--------------+---------------+------+-----+---------+-------+
-| Field        | Type          | Null | Key | Default | Extra |
-+--------------+---------------+------+-----+---------+-------+
-| COUNTRY_ID   | varchar(2)    | YES  |     | NULL    |       |
-| COUNTRY_NAME | varchar(40)   | YES  |     | NULL    |       |
-| REGION_ID    | decimal(10,0) | YES  |     | NULL    |       |
-+--------------+---------------+------+-----+---------+-------+
-```
+    ```
+    +--------------+---------------+------+-----+---------+-------+
+    | Field        | Type          | Null | Key | Default | Extra |
+    +--------------+---------------+------+-----+---------+-------+
+    | COUNTRY_ID   | varchar(2)    | YES  |     | NULL    |       |
+    | COUNTRY_NAME | varchar(40)   | YES  |     | NULL    |       |
+    | REGION_ID    | decimal(10,0) | YES  |     | NULL    |       |
+    +--------------+---------------+------+-----+---------+-------+
+    ```
 
 1. Write a SQL statement to insert a record with your own value into the table countries against each column.
 

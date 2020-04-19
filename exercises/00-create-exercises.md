@@ -28,20 +28,6 @@ You may need to restart `mysql-workbench`.
 
 1. Write a SQL statement to create a table named job_histry including columns employee_id, start_date, end_date, job_id and department_id and make sure that the value against column end_date will be entered at the time of insertion to the format like '--/--/----'.
 
-1. Write a SQL statement to create a table job_history including columns employee_id, start_date, end_date, job_id and department_id and make sure that, the employee_id column does not contain any duplicate value at the time of insertion and the foreign key column job_id contain only those values which are exists in the jobs table.
-
-Here is the structure of the table jobs;
-
-```
-+------------+--------------+------+-----+---------+-------+
-| Field      | Type         | Null | Key | Default | Extra |
-+------------+--------------+------+-----+---------+-------+
-| JOB_ID     | varchar(10)  | NO   | PRI |         |       |
-| JOB_TITLE  | varchar(35)  | NO   |     | NULL    |       |
-| MIN_SALARY | decimal(6,0) | YES  |     | NULL    |       |
-| MAX_SALARY | decimal(6,0) | YES  |     | NULL    |       |
-+------------+--------------+------+-----+---------+-------+
-```
 
 # Insert Exercises
 
