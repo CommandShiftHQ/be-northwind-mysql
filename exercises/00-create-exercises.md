@@ -45,42 +45,6 @@ Create the following table in your database:
 
 1. Write a SQL statement to insert a record with your own value into the table countries against each column.
 
-    ```
-    INSERT INTO countries (
-        country_id,
-        country_name,
-        region_id
-    ) 
-    VALUES (
-        'it',
-        'Italy',
-        '1'
-    );
-    ```
-
 2. Write a SQL statement to insert 3 rows by a single insert statement.
 
-   ```
-    INSERT INTO countries (
-        country_id,
-        country_name,
-        region_id
-    ) 
-    VALUES 
-    (
-        'it',
-        'Italy',
-        '1'
-    ),
-    (
-        'ch',
-        'China',
-        '2'
-    ),
-    (
-        'in',
-        'India',
-        '3'
-    );
-    ```
 
