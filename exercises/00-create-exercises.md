@@ -16,8 +16,6 @@ You may need to restart `mysql-workbench`.
 
 1. Remove the `countries` table with `DROP TABLE countries`. Now write a statement to create the same table again, none of the fields should be able to be null. Confirm that this is the case by attempting to insert a record with null values.
 
-1. Remove the `countries` table with `DROP TABLE countries`. Now write a statement to create the same table again, none of the fields should be able to be null 
-
 1. Remove the `countries` table and create it again. This time make sure that only the countries `Italy`, `India` and `China` are valid entries.
 
 1. Delete and recreate this table. This time make sure that no duplicate data against column country_id will be allowed at the time of insertion.
