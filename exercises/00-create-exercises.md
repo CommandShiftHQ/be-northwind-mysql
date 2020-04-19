@@ -22,7 +22,7 @@ You may need to restart `mysql-workbench`.
 
 1. Now recreate the table, but this time make the country a `key` field. This can also be used to prevent duplicate data.
 
-1. Finally, recreate the table with the `country_id` as a `primary key`. Insert a few records into the table to confirm that it is auto-incrementing this column.
+1. 1. Finally, recreate the table with the `country_id` as a `primary key` with auto increment. Insert a few records into the table to confirm that it is auto-incrementing this column.
 
 1. Write a statement to create a table named `jobs`. It should have the columns `job_id`, `job_title`, `min_salery`, `max_salery`. You should make sure that salery cannot exceed 25000.
 
