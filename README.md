@@ -44,22 +44,9 @@ sudo apt install mysql-workbench
 
 ### Getting the Database Running
 
-Clone this repo:
+Run the container
 ```
-git clone https://github.com/MCRcodes/northwind-mysql.git
-```
-To make sure the docker image we are building is named correctly, we have written a `build` and `run` script.
-
-To run the build script:
-```
-cd northwind-mysql
-
-sh ./build.sh
-```
-
-Once this completes you can use the run script to start the container:
-```
-sh ./run.sh
+docker run -d -p 3306:3306 --name northwind -e MYSQL_ROOT_PASSWORD=supersecret mcrcodes/northwind
 ```
 
 Finally you can confirm the container is built and running by opening a shell inside it. This uses the `exec` command:
@@ -74,7 +61,7 @@ From here we can open mysql and check the database has been created:
 ```
 mysql -uroot -p
 ```
-You will then be prompted for the root user password. Type in `supersecret` and hit return.
+You will then be prompted for the root user password. Type in `supersecret` and hit return. (characters you entered won't be shown on terminal, just type away and hit enter)
 
 Check database has been created:
 ```
