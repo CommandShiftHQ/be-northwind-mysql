@@ -6,7 +6,7 @@ If at any point you need to reset the database, you can do so by finding the nor
 
 You can then stop the container with `docker stop CONTAINER_ID`. 
 
-Once the container is stopped you can remove it with `docker container rm CONTAINER_ID`. After this you can simply re-run the run script: `sh ./run.sh`. 
+Once the container is stopped you can remove it with `docker container rm CONTAINER_ID`. After this you can simply re-run the run command: `docker run -d -p 3306:3306 --name northwind -e MYSQL_ROOT_PASSWORD=supersecret mcrcodes/northwind`. 
 
 You may need to restart `mysql-workbench`.
 
