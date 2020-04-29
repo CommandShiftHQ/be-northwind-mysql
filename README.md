@@ -82,7 +82,7 @@ You should see the following:
 5 rows in set (0.00 sec)
 ```
 
-That's everything we need to do inside the container. Type in `exit` to close `MySQL` and then again to exit the container. It will continue to run in the background.
+That's everything we need to do inside the container. Type in `exit;` to close `MySQL` and then again (without the `;`) to exit the container. It will continue to run in the background.
 
 ## Working on the database
 
