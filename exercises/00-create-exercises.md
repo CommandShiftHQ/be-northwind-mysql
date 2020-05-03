@@ -4,7 +4,7 @@ These exercises require you to create a table in the database, and insert record
 
 If at any point you need to reset the database, you can do so by finding the northwind container with `docker container ls`. 
 
-You can then stop the container with `docker stop CONTIANER_ID`. 
+You can then stop the container with `docker stop CONTAINER_ID`. 
 
 Once the container is stopped you can remove it with `docker container rm CONTAINER_ID`. After this you can simply re-run the run script: `sh ./run.sh`. 
 
