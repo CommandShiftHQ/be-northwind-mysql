@@ -4,13 +4,13 @@ These exercises require you to create a table in the database, and insert record
 
 If at any point you need to reset the database, you can do so by finding the northwind container with `docker container ls`. 
 
-You can then stop the container with `docker stop CONTIANER_ID`. 
+You can then stop the container with `docker stop CONTAINER_ID`. 
 
-Once the container is stopped you can remove it with `docker container rm CONTAINER_ID`. After this you can simply re-run the run script: `sh ./run.sh`. 
+Once the container is stopped you can remove it with `docker container rm CONTAINER_ID`. After this you can simply re-run the run command: `docker run -d -p 3306:3306 --name northwind -e MYSQL_ROOT_PASSWORD=supersecret mcrcodes/northwind`. 
 
 You may need to restart `mysql-workbench`.
 
-1. Write a statement to drate a simple table called `countries`. It shoud include the columns `country_id`, `country_name` and `region_id`
+1. Write a statement to create a simple table called `countries`. It shoud include the columns `country_id`, `country_name` and `region_id`
 
 1. Write a statement to insert a record into your country table. Confirm that the record exists with `SELECT * FROM countries`.
 
