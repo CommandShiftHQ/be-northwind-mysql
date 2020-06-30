@@ -1,24 +1,36 @@
 # Update Exercises
 
-Thes exercises require you to update existing records in Northwind company database.
+These exercises require you to update existing records in Northwind company database. You will need to use [`UPDATE`](https://www.w3schools.com/sql/sql_update.asp) statment. This makes use of the `UPDATE`, `SET` and `WHERE` keywords.
+
 
 Remember:
  If you make a mistake you can always remove the container and start a new one.
 
  1. Write a statement to change the `email` of every employee to `'not available'`
 
-1. Write a statement to change the `email` of every employee to `'classified'` and set everybody's `commission_pct` to `0.10`
+1. Write a statement to change the `email` of every employee to `'classified'` and set everybody's `first_name` to `Dave`
 
-1. Write a statement to change `email` to `'super top secret'` and `commission_pct` to `0.20` for employees who's `department_id` is `110`
+1. Write a statement to change `email` to `'super top secret'` and `last_name` to `McSalesman` for employees who's `job_title` is `Sales Representative`
 
-1. Write a statement to change `email` to `'eyes only'` and `commission_pct` to `0.30` for employees who's `department_id` is `80` and have a `salery` of less then `8000`
+1. Write a statement to change the `webpage` of all the employees in Seattle to the wikipedia page for Seattle. 
 
-1. Write a statement to change `email` to `'accounts'` for employees in the `Accounting` department. (You will need to reference information in the departments table)
+Now that we've rendered the `employees` table, let's look at the `customers`:
 
-1. Write a statement to change `salary` to `8000` where `employee_id` is `105`, if the existing salary is less than `5000`.
+1. Elizabeth Anderson recently Married Roland Wacker. They have requested that you update the customer table to reflect the fact that Roland has taken Elizabeth's last name. 
 
-1. Write a statement to change `job_ID` of employee whose `employee_id` is `118`, to `SH_CLERK` if the employee belongs to `department_id` `30` and the existing `job_ID `does not start with `SH`
+1. The also request that you change the `ship_name` and `ship_address` on any orders that have not yet shipped to Roland. The ship name should reflect Roland's new `last_name`. The new address should match Elizabeth's. You should check the `order_details_status` table to see which codes correspond to being shipped. Extra points if you complete this one using a `JOIN` statment.
 
-1. Write a statement to increase the `salary` of employees under the `department_id` of `40`, `90` and `110` according to the company rules that, salary will be increased by `25%` for the department `40`, `15%` for department `90` and `10%` for the department `110` and the rest of the departments will remain same
 
-1. Write a statement to increase the `minimum` and `maximum` salary of `PU_CLERK` by `2000` as well as the salary for those employees by `20%` and commission percent by `.10`.
+```
+UPDATE orders
+        LEFT JOIN
+    orders_status ON orders.status_id = orders_status.id
+SET 
+    orders.ship_name = 'Roland Andersen',
+    orders.ship_address = '123 8th Street',
+    orders.ship_city = 'Portland',
+    orders.ship_state_province = 'OR'
+WHERE
+    customer_id = 10
+        AND orders_status.status_name != 'Shipped';
+```
