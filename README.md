@@ -46,7 +46,7 @@ sudo apt install mysql-workbench
 
 Run the container
 ```
-docker run -d -p 3306:3306 --name northwind -e MYSQL_ROOT_PASSWORD=supersecret mcrcodes/northwind
+docker run -d -p 3307:3306 --name northwind -e MYSQL_ROOT_PASSWORD=supersecret mcrcodes/northwind
 ```
 
 Finally you can confirm the container is built and running by opening a shell inside it. This uses the `exec` command:
