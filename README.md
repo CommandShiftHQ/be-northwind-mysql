@@ -92,7 +92,7 @@ If the connection is not automatically shown, you can create one by clicking the
 
 	- Connection Name: `northwind`
 	- Username: leave it as `root`
-	- Port: leave it as `3306`
+	- Port: leave it as `3307`
 	- Password: `supersecret`
 
 Click `Test Connection` and then `OK`.
