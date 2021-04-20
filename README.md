@@ -5,7 +5,7 @@ A pre-populated MySQL database and practice exercises.
 ## Building the M1 image
 
 ```bash
-docker build -f ./M1/Dockerfile .
+docker build -f ./M1/Dockerfile . -t mcrcodes/northwind:m1
 ```
 
 ## Getting Started
