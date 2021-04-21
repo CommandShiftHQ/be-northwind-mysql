@@ -2,10 +2,14 @@
 
 A pre-populated MySQL database and practice exercises.
 
-## Building the M1 image
+### Accessing the database
 
-```bash
-docker build -f ./M1/Dockerfile . -t mcrcodes/northwind:m1
+You can connect `MySQL` to this version of the database with the following settings:
+
+```
+- Username: user
+- Port: 3307
+- Password: password
 ```
 
 ## Getting Started
@@ -113,4 +117,16 @@ SELECT * FROM employees;
 
 Click the lightning bolt and confirm that the query returns employee information. 
 
-Now on to the exercises!
+## Running the image on M1 Mac
+
+### Build and tag the image
+
+```bash
+docker build -f ./M1/Dockerfile . -t mcrcodes/northwind:m1
+```
+
+### Run the image
+
+```bash
+docker run -d -p 3307:3306 --name northwind -e MYSQL_ROOT_PASSWORD=supersecret mcrcodes/northwind:m1
+```
