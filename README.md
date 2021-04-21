@@ -2,16 +2,6 @@
 
 A pre-populated MySQL database and practice exercises.
 
-### Accessing the database
-
-You can connect `MySQL` to this version of the database with the following settings:
-
-```
-- Username: user
-- Port: 3307
-- Password: password
-```
-
 ## Getting Started
 
 This exercise requires you to install docker on you macine. Docker allows us to run applications inside containers. You can read more about containers [here](https://www.docker.com/resources/what-container).
@@ -129,4 +119,14 @@ docker build -f ./M1/Dockerfile . -t mcrcodes/northwind:m1
 
 ```bash
 docker run -d -p 3307:3306 --name northwind -e MYSQL_ROOT_PASSWORD=supersecret mcrcodes/northwind:m1
+```
+
+### Accessing the database
+
+You can connect `MySQL` to this version of the database with the following settings:
+
+```
+- Username: user
+- Port: 3307
+- Password: password
 ```
