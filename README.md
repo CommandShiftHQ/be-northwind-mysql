@@ -109,7 +109,11 @@ Click the lightning bolt and confirm that the query returns employee information
 
 ## Running the image on M1 Mac
 
+Start by cloning this repository on your local machine. Once cloned, `cd` into the main folder `cd northwind-mysql`. 
+
 ### Build and tag the image
+
+Run the following command in your terminal. This will create a new northwind Docker image available for your M1 Mac.
 
 ```bash
 docker build -f ./M1/Dockerfile . -t mcrcodes/northwind:m1
@@ -121,9 +125,11 @@ docker build -f ./M1/Dockerfile . -t mcrcodes/northwind:m1
 docker run -d -p 3307:3306 --name northwind -e MYSQL_ROOT_PASSWORD=supersecret mcrcodes/northwind:m1
 ```
 
+Please ignore the `MYSQL_ROOT_PASSWORD` environment variable we passed above.
+
 ### Accessing the database
 
-You can connect `MySQL` to this version of the database with the following settings:
+You can connect `MySQL Workbench` or any other DB GUI to this version of the database with the following settings:
 
 ```
 - Username: user
