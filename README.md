@@ -138,4 +138,4 @@ You can connect `MySQL Workbench` or any other DB GUI to this version of the dat
 ```
 ***
 
-#### Forked and edited by Adem Aldemir
+#### Forked and edited by Adem Aldemir 🚀
