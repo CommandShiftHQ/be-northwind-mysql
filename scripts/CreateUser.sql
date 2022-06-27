@@ -1,2 +1,2 @@
 CREATE USER 'user'@'%' IDENTIFIED BY 'password';
-GRANT ALL ON *.* TO 'user'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'%';
