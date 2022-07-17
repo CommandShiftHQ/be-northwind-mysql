@@ -46,7 +46,7 @@ sudo apt install mysql-workbench
 
 Run the container
 ```
-docker run -d -p 3307:3306 --name northwind -e MYSQL_ROOT_PASSWORD=supersecret mcrcodes/northwind
+docker run -d -p 3307:3306 --name northwind -e MYSQL_ROOT_PASSWORD=supersecret manchestercodes/northwind
 ```
 
 Finally you can confirm the container is built and running by opening a shell inside it. This uses the `exec` command:
@@ -109,20 +109,10 @@ Click the lightning bolt and confirm that the query returns employee information
 
 ## Running the image on M1 Mac
 
-Start by cloning this repository on your local machine. Once cloned, `cd` into the main folder `cd northwind-mysql`. 
-
-### Build and tag the image
-
-Run the following command in your terminal. This will create a new northwind Docker image available for your M1 Mac.
-
-```bash
-docker build -f ./M1/Dockerfile . -t mcrcodes/northwind:m1
-```
-
 ### Run the image
 
 ```bash
-docker run -d -p 3307:3306 --name northwind -e MYSQL_ROOT_PASSWORD=supersecret mcrcodes/northwind:m1
+docker run -d -p 3307:3306 --name northwind -e MYSQL_ROOT_PASSWORD=supersecret manchestercodes/northwind:m1
 ```
 
 Please ignore the `MYSQL_ROOT_PASSWORD` environment variable we passed above.
