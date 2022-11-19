@@ -61,7 +61,8 @@ You may need to restart `mysql-workbench`.
     CREATE TABLE countries (
         country_id INTEGER NOT NULL,
         country_name VARCHAR(40) CHECK (country_name IN ('Italy' , 'India', 'China')),
-        country_code VARCHAR(2) NOT NULL, UNIQUE (country_id)
+        country_code VARCHAR(2) NOT NULL, 
+        UNIQUE (country_id)
     );
     ```
 
