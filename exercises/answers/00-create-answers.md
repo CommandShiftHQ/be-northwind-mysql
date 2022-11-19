@@ -114,13 +114,21 @@ You may need to restart `mysql-workbench`.
 Create the following table in your database:
 
     ```
-    +--------------+---------------+------+--------------+---------+--------+
-    | Field        | Type          | Null | Key          | Default | Extra  |
-    +--------------+---------------+------+--------------+---------+--------+
-    | COUNTRY_ID   | integer       | YES  | PRIMARY KEY  | NOT NULL|        |
-    | COUNTRY_NAME | varchar(40)   | YES  |              | NULL    |        |
-    | COUNTRY_CODE | varchar(2).   | YES  |              | NULL    | UNIQUE |
-    +--------------+---------------+------+--------------+---------+--------+
+    +--------------+---------------+------+--------------+---------------+
+    | Field        | Type          | Null | Key          | Extra         |
+    +--------------+---------------+------+--------------+---------------+
+    | COUNTRY_ID   | integer       | NO   | PRIMARY KEY  | AUTO_INCREMENT|
+    | COUNTRY_NAME | varchar(40)   | NO   |              |               |
+    | COUNTRY_CODE | varchar(2)    | NO   |              | UNIQUE        |
+    +--------------+---------------+------+--------------+---------------+
+    ```
+    
+    ```
+    CREATE TABLE countries (
+        country_id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        country_name VARCHAR(40) NOT NULL,
+        country_code VARCHAR(2) NOT NULL UNIQUE
+    );
     ```
 
 1. Write a SQL statement to insert a record with your own value into the table countries against each column.
