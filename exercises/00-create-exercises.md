@@ -20,7 +20,7 @@ You may need to restart `mysql-workbench`.
 
 1. Delete and recreate this table. This time make sure that no duplicate data against column country_id will be allowed at the time of insertion.
 
-1. Now recreate the table, but this time make the country a `key` field. This can also be used to prevent duplicate data.
+1. Now recreate the table, but this time make the `region_id` a `key` field. This can also be used to prevent duplicate data.
 
 1. 1. Finally, recreate the table with the `country_id` as a `primary key` with auto increment. Insert a few records into the table to confirm that it is auto-incrementing this column.
 
