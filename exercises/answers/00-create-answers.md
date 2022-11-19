@@ -14,9 +14,9 @@ You may need to restart `mysql-workbench`.
 
     ```
     CREATE TABLE countries (
-        country_id VARCHAR(2),
+        country_id INTEGER,
         country_name VARCHAR(40),
-        region_id DECIMAL(10,0)
+        country_code VARCHAR(2)
     );
     ```
 
@@ -26,12 +26,12 @@ You may need to restart `mysql-workbench`.
     INSERT INTO countries (
         country_id,
         country_name,
-        region_id
+        country_code
     ) 
     VALUES (
-        'en',
-        'england',
-        1
+        '1',
+        'Wngland',
+        'en'
     );
     ```
 
@@ -39,9 +39,9 @@ You may need to restart `mysql-workbench`.
 
     ```
     CREATE TABLE countries (
-        country_id VARCHAR(2) NOT NULL,
+        country_id INTEGER NOT NULL,
         country_name VARCHAR(40) NOT NULL,
-        region_id DECIMAL(10 , 0 ) NOT NULL
+        country_code VARCHAR(2) NOT NULL
     );
     ```
 
@@ -49,9 +49,9 @@ You may need to restart `mysql-workbench`.
 
     ```
     CREATE TABLE countries (
-        country_id VARCHAR(2) NOT NULL,
+        country_id INTEGER  NOT NULL,
         country_name VARCHAR(40) CHECK (country_name IN ('Italy' , 'India', 'China')),
-        region_id DECIMAL(10 , 0 ) NOT NULL
+        country_code VARCHAR(2) NOT NULL
     );
     ```
 
@@ -59,20 +59,19 @@ You may need to restart `mysql-workbench`.
 
     ```
     CREATE TABLE countries (
-        country_id VARCHAR(2) NOT NULL,
+        country_id INTEGER NOT NULL,
         country_name VARCHAR(40) CHECK (country_name IN ('Italy' , 'India', 'China')),
-        region_id DECIMAL(10 , 0 ) NOT NULL,
-        UNIQUE (country_id)
+        country_code VARCHAR(2) NOT NULL, UNIQUE (country_id)
     );
     ```
 
-1. Now recreate the table, but this time make the country a `key` field. This can also be used to prevent duplicate data.
+1. Now recreate the table, but this time make the country_code a `unique` field. This can be used to prevent duplicate data.
 
     ```
     CREATE TABLE countries (
-        country_id VARCHAR(2) NOT NULL,
+        country_id INTEGER NOT NULL,
         country_name VARCHAR(40) CHECK (country_name IN ('Italy' , 'India', 'China')),
-        region_id DECIMAL(10 , 0 ) KEY
+        country_code VARCHAR(2) UNIQUE
     );
     ```
 
@@ -80,9 +79,9 @@ You may need to restart `mysql-workbench`.
 
     ```
     CREATE TABLE countries (
-    country_id INTEGER NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
-    country_name VARCHAR(40) CHECK (country_name IN ('Italy' , 'India', 'China')),
-    region_id DECIMAL(10 , 0 )
+        country_id INTEGER NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
+        country_name VARCHAR(40) CHECK (country_name IN ('Italy' , 'India', 'China')),
+        country_code VARCHAR(2)
     );
     ```
 
@@ -90,24 +89,22 @@ You may need to restart `mysql-workbench`.
 
     ```
     CREATE TABLE jobs ( 
-    JOB_ID varchar(10) NOT NULL , 
-    JOB_TITLE varchar(35) NOT NULL, 
-    MIN_SALARY decimal(6,0), 
-    MAX_SALARY decimal(6,0) 
-    CHECK(MAX_SALARY<=25000)
+        job_id varchar(10) NOT NULL , 
+        job_title varchar(35) NOT NULL, 
+        min_salary decimal(6,0), 
+        max_salary decimal(6,0) CHECK(max_salary <= 25000)
     );
     ```
 
-1. Write a SQL statement to create a table named job_histry including columns employee_id, start_date, end_date, job_id and department_id and make sure that the value against column end_date will be entered at the time of insertion to the format like '--/--/----'.
+1. Write a SQL statement to create a table named job_histry including columns `employee_id`, `start_date`, `end_date`, `job_id` and `department_id` and make sure that the value against column `end_date` will be entered at the time of insertion to the format like '--/--/----'.
 
     ```
     CREATE TABLE IF NOT EXISTS job_history ( 
-    EMPLOYEE_ID decimal(6,0) NOT NULL, 
-    START_DATE date NOT NULL, 
-    END_DATE date NOT NULL
-    CHECK (END_DATE LIKE '--/--/----'), 
-    JOB_ID varchar(10) NOT NULL, 
-    DEPARTMENT_ID decimal(4,0) NOT NULL 
+        employee_id decimal(6,0) NOT NULL, 
+        start_date date NOT NULL, 
+        end_date date NOT NULL CHECK (END_DATE LIKE '--/--/----'), 
+        job_id varchar(10) NOT NULL, 
+        department_id decimal(4,0) NOT NULL 
     );
     ```
 
@@ -116,13 +113,13 @@ You may need to restart `mysql-workbench`.
 Create the following table in your database:
 
     ```
-    +--------------+---------------+------+-----+---------+-------+
-    | Field        | Type          | Null | Key | Default | Extra |
-    +--------------+---------------+------+-----+---------+-------+
-    | COUNTRY_ID   | varchar(2)    | YES  |     | NULL    |       |
-    | COUNTRY_NAME | varchar(40)   | YES  |     | NULL    |       |
-    | REGION_ID    | decimal(10,0) | YES  |     | NULL    |       |
-    +--------------+---------------+------+-----+---------+-------+
+    +--------------+---------------+------+--------------+---------+--------+
+    | Field        | Type          | Null | Key          | Default | Extra  |
+    +--------------+---------------+------+--------------+---------+--------+
+    | COUNTRY_ID   | integer       | YES  | PRIMARY KEY  | NOT NULL|        |
+    | COUNTRY_NAME | varchar(40)   | YES  |              | NULL    |        |
+    | COUNTRY_CODE | varchar(2).   | YES  |              | NULL    | UNIQUE |
+    +--------------+---------------+------+--------------+---------+--------+
     ```
 
 1. Write a SQL statement to insert a record with your own value into the table countries against each column.
@@ -132,12 +129,12 @@ Create the following table in your database:
     INSERT INTO countries (
         country_id,
         country_name,
-        region_id
+        country_code
     ) 
     VALUES (
-        'it',
+        1,
         'Italy',
-        '1'
+        'it'
     );
     ```
 
@@ -147,23 +144,23 @@ Create the following table in your database:
     INSERT INTO countries (
         country_id,
         country_name,
-        region_id
+        country_code
     ) 
     VALUES 
     (
-        'it',
+        1,
         'Italy',
-        '1'
+        'it'
     ),
     (
-        'ch',
+        2,
         'China',
-        '2'
+        'ch'
     ),
     (
-        'in',
+        3,
         'India',
-        '3'
+        'in'
     );
     ```
 
