@@ -86,7 +86,7 @@ You may need to restart `mysql-workbench`.
     );
     ```
 
-1. Write a statement to create a table named `jobs`. It should have the columns `job_id`, `job_title`, `min_salery`, `max_salery`. You should make sure that salery cannot exceed 25000.
+1. Write a statement to create a table named `jobs`. It should have the columns `job_id`, `job_title`, `min_salary`, `max_salary`. You should make sure that salary cannot exceed 25000.
 
     ```
     CREATE TABLE jobs ( 
@@ -97,7 +97,7 @@ You may need to restart `mysql-workbench`.
     );
     ```
 
-1. Write a SQL statement to create a table named job_histry including columns `employee_id`, `start_date`, `end_date`, `job_id` and `department_id` and make sure that the value against column `end_date` will be entered at the time of insertion to the format like '--/--/----'.
+1. Write a SQL statement to create a table named `job_history` including columns `employee_id`, `start_date`, `end_date`, `job_id` and `department_id` and make sure that the value against column `end_date` will be entered at the time of insertion to the format like '--/--/----'.
 
     ```
     CREATE TABLE IF NOT EXISTS job_history ( 
