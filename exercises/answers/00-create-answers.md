@@ -10,7 +10,7 @@ Once the container is stopped you can remove it with `docker container rm CONTAI
 
 You may need to restart `mysql-workbench`.
 
-1. Write a statement to drate a simple table called `countries`. It shoud include the columns `country_id`, `country_name` and `region_id`
+1. Write a statement to create a simple table called `countries`. It shoud include the columns `country_id`, `country_name` and `region_id`
 
     ```
     CREATE TABLE countries (
@@ -30,7 +30,7 @@ You may need to restart `mysql-workbench`.
     ) 
     VALUES (
         '1',
-        'Wngland',
+        'England',
         'en'
     );
     ```
